@@ -231,9 +231,7 @@ main.prototype = {
 		//when the player gains in size
 		socket.on('gained', onGained);
 		
-		//when the item gets picked up
-		// check for itempicked
-		socket.on('item_picked', onitemPicked); 
+
 		// check for item removal
 		socket.on ('itemremove', onitemremove); 
 		// check for item update
