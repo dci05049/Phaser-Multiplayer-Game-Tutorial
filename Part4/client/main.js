@@ -1,5 +1,5 @@
 var socket; 
-socket = io.connect();
+var socket = io({transports: ['websocket'], upgrade: false});
 
 
 canvas_width = window.innerWidth * window.devicePixelRatio;
@@ -24,6 +24,7 @@ function onsocketConnected () {
 	console.log("connected to server"); 
 	gameProperties.in_game = true;
 	// send the server our initial position and tell it we are connected
+	console.log("creating new player");
 	socket.emit('new_player', {x: 0, y: 0, angle: 0});
 }
 
@@ -215,7 +216,6 @@ main.prototype = {
 		game.stage.backgroundColor = 0xE1A193;;
 		console.log("client started");
 		socket.on("connect", onsocketConnected); 
-		
 		//listen for main player creation
 		socket.on("create_player", createPlayer);
 		//listen to new enemy connections
