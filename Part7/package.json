@@ -3,14 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.2",
     "node-uuid": "^1.4.8",
+    "p2": "^0.7.1",
     "socket.io": "^2.0.3"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "4.1.x"
   }
 }
